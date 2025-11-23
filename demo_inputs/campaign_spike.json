@@ -1,0 +1,19 @@
+{
+  "inputs": {
+    "notes": "Client reports sudden cost increase for LeadGen Nov campaign."
+  },
+  "analytics": {
+    "campaigns": [
+      {
+        "campaign_id": "leadgen_nov",
+        "name": "LeadGen Nov",
+        "channel": "facebook",
+        "daily_spend": 50,
+        "cpa": 25.0,
+        "target_cpa": 12.0,
+        "conversions_last_7d": 10,
+        "trend": "down"
+      }
+    ]
+  }
+}

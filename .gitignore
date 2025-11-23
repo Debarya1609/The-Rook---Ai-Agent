@@ -1,0 +1,41 @@
+# Virtual environment
+.venv/
+
+# Python cache & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment files
+.env
+.env.* 
+
+# Editor / IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# Coverage, pipenv, poetry
+.coverage
+htmlcov/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Build / dist
+dist/
+build/
+*.egg-info/
+
+# Secrets/config (if you store keys)
+secrets/
+config/*.key
