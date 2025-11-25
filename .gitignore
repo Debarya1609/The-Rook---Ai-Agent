@@ -39,3 +39,5 @@ build/
 # Secrets/config (if you store keys)
 secrets/
 config/*.key
+.env
+.env.*

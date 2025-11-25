@@ -1,0 +1,19 @@
+{
+  "inputs": {
+    "notes": "Backend developer Ajay is overloaded with 9 tasks this week. Sana has only 2 tasks. Client wants module delivery by Friday."
+  },
+  "analytics": {
+    "team_load": [
+      {
+        "name": "Ajay",
+        "role": "backend_dev",
+        "tasks_assigned": 9
+      },
+      {
+        "name": "Sana",
+        "role": "backend_dev",
+        "tasks_assigned": 2
+      }
+    ]
+  }
+}
