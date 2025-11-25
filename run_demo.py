@@ -4,6 +4,7 @@ import argparse
 import os
 from datetime import datetime
 from rook_orchestrator.orchestrator import RookOrchestrator
+from datetime import timezone
 
 def ensure_dir(p):
     os.makedirs(p, exist_ok=True)
@@ -20,7 +21,7 @@ def run_demo(file_path, use_llm=False, save_logs=False):
 
     # Optionally save logs (llm_raw + full decision)
     if save_logs:
-        timestamp = datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+        timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
         ensure_dir("logs/llm_samples")
         ensure_dir("logs/decisions")
         # llm_raw may contain non-serializable fields but orchestrator sanitizes it

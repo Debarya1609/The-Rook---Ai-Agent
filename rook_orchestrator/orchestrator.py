@@ -6,6 +6,7 @@ from rook_orchestrator.agents.action_agent import execute_plan
 from rook_orchestrator.tools.analytics_api import AnalyticsAPI
 import json, datetime, sys, os
 from typing import List, Dict, Any
+from datetime import timezone
 
 def _sanitize_llm_raw(llm_raw):
     if not llm_raw:
@@ -72,8 +73,9 @@ def _filter_and_approve_actions(plan: List[Dict[str,Any]], threshold: float = 0.
             conf = float(conf)
         except Exception:
             conf = 0.5
-        if conf < threshold:
+        if conf <= threshold:
             ok = _prompt_user_approve(a)
+
             if ok:
                 approved.append(a)
             else:
@@ -92,7 +94,7 @@ class RookOrchestrator:
         """
         Save llm_raw and full decision to logs with UTC timestamp.
         """
-        ts = datetime.datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+        ts = datetime.datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
         try:
             os.makedirs("logs/llm_samples", exist_ok=True)
             os.makedirs("logs/decisions", exist_ok=True)

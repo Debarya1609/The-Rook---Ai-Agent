@@ -174,7 +174,8 @@ def plan_actions(board_state: Dict[str,Any], insights: Dict[str,Any], use_llm: b
     prompt = prompt_template.replace("{board_state_here}", json.dumps(board_state)).replace("{insights_here}", json.dumps(insights))
 
     # ask for larger output and deterministic render
-    llm_resp = call_llm(prompt, max_output_tokens=1500, temperature=0.0)
+    llm_resp = call_llm(prompt, max_output_tokens=2000, temperature=0.0)
+
     text = llm_resp.get("text", "") or ""
     parsed = _extract_json(text)
 
