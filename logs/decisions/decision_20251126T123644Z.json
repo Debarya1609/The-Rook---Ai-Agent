@@ -1,0 +1,210 @@
+{
+  "date": "2025-11-26",
+  "board": {
+    "date": "2025-11-26",
+    "inputs": {
+      "notes": "Client reports sudden cost increase for LeadGen Nov campaign."
+    },
+    "analytics": {
+      "campaigns": [
+        {
+          "campaign_id": "leadgen_nov",
+          "name": "LeadGen Nov",
+          "channel": "facebook",
+          "daily_spend": 50,
+          "cpa": 25.0,
+          "target_cpa": 12.0,
+          "conversions_last_7d": 10,
+          "trend": "down"
+        }
+      ]
+    }
+  },
+  "insights": {
+    "campaign_insights": [
+      {
+        "campaign_id": "leadgen_nov",
+        "recommendation": "investigate_creatives",
+        "confidence": 0.6
+      }
+    ],
+    "risks": [
+      {
+        "campaign_id": "leadgen_nov",
+        "issue": "high_cpa",
+        "urgency": 8,
+        "note": "CPA 25.0 > target 12.0"
+      }
+    ]
+  },
+  "plan": [
+    {
+      "action_type": "create_task",
+      "details": {
+        "task": "Prioritize and initiate an urgent review of the LeadGen Nov campaign, addressing the client's reported cost increase and the critical CPA of 25.0 (target 12.0)."
+      },
+      "reason": "Prioritize and initiate an urgent review of the LeadGen Nov campaign, addressing the client's reported cost increase and the critical CPA of 25.0 (target 12.0).",
+      "expected_impact": null,
+      "preconditions": [],
+      "rollback_plan": null,
+      "confidence": 0.6,
+      "estimated_time_hours": 0.0
+    },
+    {
+      "action_type": "create_task",
+      "details": {
+        "task": "Conduct a deep dive into LeadGen Nov campaign creatives on Facebook to identify underperforming assets or those driving the sudden cost surge."
+      },
+      "reason": "Conduct a deep dive into LeadGen Nov campaign creatives on Facebook to identify underperforming assets or those driving the sudden cost surge.",
+      "expected_impact": null,
+      "preconditions": [],
+      "rollback_plan": null,
+      "confidence": 0.6,
+      "estimated_time_hours": 0.0
+    },
+    {
+      "action_type": "create_task",
+      "details": {
+        "task": "Audit all recent modifications to the LeadGen Nov campaign (e.g., bidding, targeting, budget) to pinpoint any changes contributing to the cost increase."
+      },
+      "reason": "Audit all recent modifications to the LeadGen Nov campaign (e.g., bidding, targeting, budget) to pinpoint any changes contributing to the cost increase.",
+      "expected_impact": null,
+      "preconditions": [],
+      "rollback_plan": null,
+      "confidence": 0.6,
+      "estimated_time_hours": 0.0
+    },
+    {
+      "action_type": "create_task",
+      "details": {
+        "task": "Provide an immediate update to the client, confirming receipt of their report and outlining the initial investigative steps being taken for LeadGen Nov."
+      },
+      "reason": "Provide an immediate update to the client, confirming receipt of their report and outlining the initial investigative steps being taken for LeadGen Nov.",
+      "expected_impact": null,
+      "preconditions": [],
+      "rollback_plan": null,
+      "confidence": 0.6,
+      "estimated_time_hours": 0.0
+    }
+  ],
+  "results": {
+    "results": [
+      {
+        "action": {
+          "action_type": "create_task",
+          "details": {
+            "task": "Prioritize and initiate an urgent review of the LeadGen Nov campaign, addressing the client's reported cost increase and the critical CPA of 25.0 (target 12.0)."
+          },
+          "reason": "Prioritize and initiate an urgent review of the LeadGen Nov campaign, addressing the client's reported cost increase and the critical CPA of 25.0 (target 12.0).",
+          "expected_impact": null,
+          "preconditions": [],
+          "rollback_plan": null,
+          "confidence": 0.6,
+          "estimated_time_hours": 0.0
+        },
+        "result": {
+          "ok": true,
+          "task_id": "0859366e-9829-4b51-9be5-3c65c9877c5b",
+          "task": {
+            "task_id": "0859366e-9829-4b51-9be5-3c65c9877c5b",
+            "task": "Prioritize and initiate an urgent review of the LeadGen Nov campaign, addressing the client's reported cost increase and the critical CPA of 25.0 (target 12.0).",
+            "assignee": null,
+            "due": null,
+            "meta": {
+              "task": "Prioritize and initiate an urgent review of the LeadGen Nov campaign, addressing the client's reported cost increase and the critical CPA of 25.0 (target 12.0)."
+            }
+          }
+        }
+      },
+      {
+        "action": {
+          "action_type": "create_task",
+          "details": {
+            "task": "Conduct a deep dive into LeadGen Nov campaign creatives on Facebook to identify underperforming assets or those driving the sudden cost surge."
+          },
+          "reason": "Conduct a deep dive into LeadGen Nov campaign creatives on Facebook to identify underperforming assets or those driving the sudden cost surge.",
+          "expected_impact": null,
+          "preconditions": [],
+          "rollback_plan": null,
+          "confidence": 0.6,
+          "estimated_time_hours": 0.0
+        },
+        "result": {
+          "ok": true,
+          "task_id": "9b6cf099-3585-4a7f-b5fe-92ac2c856d8a",
+          "task": {
+            "task_id": "9b6cf099-3585-4a7f-b5fe-92ac2c856d8a",
+            "task": "Conduct a deep dive into LeadGen Nov campaign creatives on Facebook to identify underperforming assets or those driving the sudden cost surge.",
+            "assignee": null,
+            "due": null,
+            "meta": {
+              "task": "Conduct a deep dive into LeadGen Nov campaign creatives on Facebook to identify underperforming assets or those driving the sudden cost surge."
+            }
+          }
+        }
+      },
+      {
+        "action": {
+          "action_type": "create_task",
+          "details": {
+            "task": "Audit all recent modifications to the LeadGen Nov campaign (e.g., bidding, targeting, budget) to pinpoint any changes contributing to the cost increase."
+          },
+          "reason": "Audit all recent modifications to the LeadGen Nov campaign (e.g., bidding, targeting, budget) to pinpoint any changes contributing to the cost increase.",
+          "expected_impact": null,
+          "preconditions": [],
+          "rollback_plan": null,
+          "confidence": 0.6,
+          "estimated_time_hours": 0.0
+        },
+        "result": {
+          "ok": true,
+          "task_id": "3138c8b5-2712-4810-8d20-3fa266d54942",
+          "task": {
+            "task_id": "3138c8b5-2712-4810-8d20-3fa266d54942",
+            "task": "Audit all recent modifications to the LeadGen Nov campaign (e.g., bidding, targeting, budget) to pinpoint any changes contributing to the cost increase.",
+            "assignee": null,
+            "due": null,
+            "meta": {
+              "task": "Audit all recent modifications to the LeadGen Nov campaign (e.g., bidding, targeting, budget) to pinpoint any changes contributing to the cost increase."
+            }
+          }
+        }
+      },
+      {
+        "action": {
+          "action_type": "create_task",
+          "details": {
+            "task": "Provide an immediate update to the client, confirming receipt of their report and outlining the initial investigative steps being taken for LeadGen Nov."
+          },
+          "reason": "Provide an immediate update to the client, confirming receipt of their report and outlining the initial investigative steps being taken for LeadGen Nov.",
+          "expected_impact": null,
+          "preconditions": [],
+          "rollback_plan": null,
+          "confidence": 0.6,
+          "estimated_time_hours": 0.0
+        },
+        "result": {
+          "ok": true,
+          "task_id": "b1f0213f-c7b0-48ab-9800-c56f713068b2",
+          "task": {
+            "task_id": "b1f0213f-c7b0-48ab-9800-c56f713068b2",
+            "task": "Provide an immediate update to the client, confirming receipt of their report and outlining the initial investigative steps being taken for LeadGen Nov.",
+            "assignee": null,
+            "due": null,
+            "meta": {
+              "task": "Provide an immediate update to the client, confirming receipt of their report and outlining the initial investigative steps being taken for LeadGen Nov."
+            }
+          }
+        }
+      }
+    ]
+  },
+  "llm_raw": {
+    "text": "```json\n{\n  \"actions\": [\n    {\n      \"action\": \"Prioritize and initiate an urgent review of the LeadGen Nov campaign, addressing the client's reported cost increase and the critical CPA of 25.0 (target 12.0).\",\n      \"type\": \"Investigation\"\n    },\n    {\n      \"action\": \"Conduct a deep dive into LeadGen Nov campaign creatives on Facebook to identify underperforming assets or those driving the sudden cost surge.\",\n      \"type\": \"Analysis\"\n    },\n    {\n      \"action\": \"Audit all recent modifications to the LeadGen Nov campaign (e.g., bidding, targeting, budget) to pinpoint any changes contributing to the cost increase.\",\n      \"type\": \"Audit\"\n    },\n    {\n      \"action\": \"Provide an immediate update to the client, confirming receipt of their report and outlining the initial investigative steps being taken for LeadGen Nov.\",\n      \"type\": \"Communication\"\n    }\n  ],\n  \"summary\": \"The LeadGen Nov campaign is in critical condition, with a CPA of 25.0 more than double its target, exacerbated by a sudden cost increase reported by the client. Immediate action is required to investigate creative performance and recent campaign changes to stabilize costs and improve efficiency.\"\n}\n```",
+    "meta": {
+      "model": "gemini-2.5-flash",
+      "source": "gemini"
+    },
+    "raw_str": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    parts=[\n      Part(\n        text=\"\"\"```json\n{\n  \"actions\": [\n    {\n      \"action\": \"Prioritize and initiate an urgent review of the LeadGen Nov campaign, addressing the client's reported cost increase and the critical CPA of 25.0 (target 12.0).\",\n      \"type\": \"Investigation\"\n    },\n    {\n      \"action\": \"Conduct a deep dive into LeadGen Nov campaign creatives on Facebook to identify underperforming assets or those driving the sudden cost surge.\",\n      \"type\": \"Analysis\"\n    },\n    {\n      \"action\": \"Audit all recent modifications to the LeadGen Nov campaign (e.g., bidding, targeting, budget) to pinpoint any changes contributing to the cost increase.\",\n      \"type\": \"Audit\"\n    },\n    {\n      \"action\": \"Provide an immediate update to the client, confirming receipt of their report and outlining the initial investigative steps being taken for LeadGen Nov.\",\n      \"type\": \"Communication\"\n    }\n  ],\n  \"summary\": \"The LeadGen Nov campaign is in critical condition, with a CPA of 25.0 more than double its target, exacerbated by a sudden cost increase reported by the client. Immediate action is required to investigate creative performance and recent campaign changes to stabilize costs and improve efficiency.\"\n}\n```\"\"\"\n      ),\n    ],\n    role='model'\n  ),\n  finish_reason=<FinishReason.STOP: 'STOP'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='TvQmab_RFPK3qfkP3bbYcA' usage_metadata=GenerateContentResponseUsageMetadata(\n  candidates_token_count=281,\n  prompt_token_count=200,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=200\n    ),\n  ],\n  thoughts_token_count=1446,\n  total_token_count=1927\n) automatic_function_calling_history=[] parsed=None"
+  }
+}
