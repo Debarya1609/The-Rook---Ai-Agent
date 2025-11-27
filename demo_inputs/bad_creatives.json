@@ -1,0 +1,37 @@
+{
+  "date": "2025-11-26",
+  "inputs": {
+    "notes": "CTR dropped suddenly after creative swap on Facebook ads last week."
+  },
+  "analytics": {
+    "campaigns": [
+      {
+        "campaign_id": "piano_launch",
+        "name": "Piano Course Launch",
+        "channel": "facebook",
+        "daily_spend": 120.0,
+        "cpa": 18.0,
+        "target_cpa": 10.0,
+        "conversions_last_7d": 6,
+        "trend": "down"
+      }
+    ],
+    "creative_stats": [
+      {
+        "creative_id": "vid_01",
+        "ctr": 0.3,
+        "impressions": 10000,
+        "last_updated": "2025-11-20"
+      },
+      {
+        "creative_id": "img_02",
+        "ctr": 0.02,
+        "impressions": 8000,
+        "last_updated": "2025-11-23"
+      }
+    ]
+  },
+  "expected": {
+    "notes": "Investigate creative img_02, roll back or refresh creatives, test new variants."
+  }
+}

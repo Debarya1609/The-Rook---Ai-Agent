@@ -1,0 +1,7 @@
+{
+  "text": "{\"plan\": [{\"action_type\": \"adjust_budget\", \"campaign_id\": \"leadgen_nov\", \"adjustment\": -0.2, \"reason\": \"Reduce spend to control CPA\", \"confidence\": 0.7}, {\"action_type\": \"create_task\", \"task\": \"Investigate creatives for leadgen_nov\", \"assignee\": \"marketing_lead\", \"reason\": \"Possible creative fatigue\", \"confidence\": 0.5}]}",
+  "meta": {
+    "source": "stub-fallback",
+    "error": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}"
+  }
+}

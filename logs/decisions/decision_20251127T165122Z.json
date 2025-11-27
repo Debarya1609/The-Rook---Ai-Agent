@@ -1,0 +1,144 @@
+{
+  "date": "2025-11-27",
+  "board": {
+    "date": "2025-11-27",
+    "inputs": {
+      "notes": "Client reports sudden cost increase for LeadGen Nov campaign."
+    },
+    "analytics": {
+      "campaigns": [
+        {
+          "campaign_id": "leadgen_nov",
+          "name": "LeadGen Nov",
+          "channel": "facebook",
+          "daily_spend": 40.0,
+          "cpa": 25.0,
+          "target_cpa": 12.0,
+          "conversions_last_7d": 10,
+          "trend": "down"
+        }
+      ]
+    }
+  },
+  "insights": {
+    "campaign_insights": [
+      {
+        "campaign_id": "leadgen_nov",
+        "recommendation": "investigate_creatives",
+        "confidence": 0.6
+      }
+    ],
+    "risks": [
+      {
+        "campaign_id": "leadgen_nov",
+        "issue": "high_cpa",
+        "urgency": 8,
+        "note": "CPA 25.0 > target 12.0"
+      }
+    ]
+  },
+  "plan": [
+    {
+      "id": "40ad894d-3cbc-48f2-a5ab-d7a425a15aa7",
+      "action_type": "adjust_budget",
+      "details": {
+        "campaign_id": "leadgen_nov",
+        "adjustment": -0.2
+      },
+      "reason": "Reduce spend to control CPA",
+      "confidence": 0.7,
+      "expected_impact": null,
+      "preconditions": [],
+      "rollback_plan": null,
+      "estimated_time_hours": 0.0,
+      "campaign_id": "leadgen_nov",
+      "adjustment": -0.2
+    },
+    {
+      "id": "c07a4b58-05dd-4d67-bd34-ee1aa2f34337",
+      "action_type": "create_task",
+      "details": {
+        "task": "Investigate creatives for leadgen_nov",
+        "assignee": "marketing_lead",
+        "campaign_id": "leadgen_nov"
+      },
+      "reason": "Possible creative fatigue",
+      "confidence": 0.5,
+      "expected_impact": null,
+      "preconditions": [],
+      "rollback_plan": null,
+      "estimated_time_hours": 0.0,
+      "assignee": "marketing_lead",
+      "campaign_id": "leadgen_nov"
+    }
+  ],
+  "results": {
+    "results": [
+      {
+        "action": {
+          "id": "40ad894d-3cbc-48f2-a5ab-d7a425a15aa7",
+          "action_type": "adjust_budget",
+          "details": {
+            "campaign_id": "leadgen_nov",
+            "adjustment": -0.2
+          },
+          "reason": "Reduce spend to control CPA",
+          "confidence": 0.7,
+          "expected_impact": null,
+          "preconditions": [],
+          "rollback_plan": null,
+          "estimated_time_hours": 0.0,
+          "campaign_id": "leadgen_nov",
+          "adjustment": -0.2
+        },
+        "result": {
+          "ok": true,
+          "campaign_id": "leadgen_nov",
+          "old_spend": 50,
+          "new_spend": 40.0
+        }
+      },
+      {
+        "action": {
+          "id": "c07a4b58-05dd-4d67-bd34-ee1aa2f34337",
+          "action_type": "create_task",
+          "details": {
+            "task": "Investigate creatives for leadgen_nov",
+            "assignee": "marketing_lead",
+            "campaign_id": "leadgen_nov"
+          },
+          "reason": "Possible creative fatigue",
+          "confidence": 0.5,
+          "expected_impact": null,
+          "preconditions": [],
+          "rollback_plan": null,
+          "estimated_time_hours": 0.0,
+          "assignee": "marketing_lead",
+          "campaign_id": "leadgen_nov"
+        },
+        "result": {
+          "ok": true,
+          "task_id": "5cd923dc-9291-40cc-9a6d-cbecb96deef9",
+          "task": {
+            "task_id": "5cd923dc-9291-40cc-9a6d-cbecb96deef9",
+            "task": "Investigate creatives for leadgen_nov",
+            "assignee": "marketing_lead",
+            "due": null,
+            "meta": {
+              "task": "Investigate creatives for leadgen_nov",
+              "assignee": "marketing_lead",
+              "campaign_id": "leadgen_nov"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "llm_raw": {
+    "text": "{\"plan\": [{\"action_type\": \"adjust_budget\", \"campaign_id\": \"leadgen_nov\", \"adjustment\": -0.2, \"reason\": \"Reduce spend to control CPA\", \"confidence\": 0.7}, {\"action_type\": \"create_task\", \"task\": \"Investigate creatives for leadgen_nov\", \"assignee\": \"marketing_lead\", \"reason\": \"Possible creative fatigue\", \"confidence\": 0.5}]}",
+    "meta": {
+      "source": "stub-fallback",
+      "error": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}"
+    }
+  }
+}

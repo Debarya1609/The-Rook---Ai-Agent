@@ -1,0 +1,23 @@
+{
+  "date": "2025-11-26",
+  "inputs": {
+    "notes": "Client reduced budget mid-month and wants recommendations to maximize conversions."
+  },
+  "analytics": {
+    "campaigns": [
+      {
+        "campaign_id": "leadgen_oct",
+        "name": "LeadGen Oct",
+        "channel": "google",
+        "daily_spend": 10.0,
+        "cpa": 30.0,
+        "target_cpa": 15.0,
+        "conversions_last_7d": 3,
+        "trend": "down"
+      }
+    ]
+  },
+  "expected": {
+    "notes": "Prioritize top-performing ad sets, pause low-performing ones, suggest creative reschedule."
+  }
+}
