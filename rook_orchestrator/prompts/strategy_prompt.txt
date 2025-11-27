@@ -37,3 +37,166 @@ INSTRUCTIONS:
 
 EXAMPLE OUTPUT:
 {"actions":[{"action_type":"adjust_budget","details":{"campaign_id":"leadgen_nov","adjustment":-0.2},"reason":"CPA above target","expected_impact":"reduce wasted spend","preconditions":["ad account access"],"rollback_plan":"restore budget if conversions drop","confidence":0.7,"estimated_time_hours":0.05}],"summary":"Reduce spend on inefficient campaign and investigate creatives."}
+
+### EXAMPLE 1
+INPUT:
+notes: "Client reports sudden cost increase for LeadGen Nov."
+campaign: "leadgen_nov"
+cpa: 25, target: 12
+
+OUTPUT:
+{
+  "actions": [
+    {
+      "action_type": "create_task",
+      "reason": "Investigate 'LeadGen Nov' campaign creatives on Facebook.",
+      "details": {
+        "task": "Investigate creative performance for LeadGen Nov"
+      },
+      "confidence": 0.6
+    },
+    {
+      "action_type": "create_task",
+      "reason": "Analyze cost drivers for high CPA.",
+      "details": {
+        "task": "Analyze bidding, targeting, competitive landscape"
+      },
+      "confidence": 0.6
+    },
+    {
+      "action_type": "create_task",
+      "reason": "Communicate actions to client.",
+      "details": {
+        "task": "Send update to client about investigation steps"
+      },
+      "confidence": 0.6
+    }
+  ],
+  "summary": "CPA is critically high (25 > 12). Immediate investigation required."
+}
+### END EXAMPLE 1
+
+##### 
+OUTPUT:
+{
+  "actions": [
+    {
+      "action_type": "create_task",
+      "details": {"task":"Investigate creatives for LeadGen Nov", "campaign_id":"leadgen_nov"},
+      "reason":"Possible creative fatigue",
+      "confidence": 0.6
+    },
+    {
+      "action_type": "create_task",
+      "details":{"task":"Analyze bidding/targeting for LeadGen Nov"},
+      "reason":"Investigate bid/target changes",
+      "confidence": 0.6
+    },
+    {
+      "action_type":"draft_email",
+      "details":{"to":"client@example.com","subject":"LeadGen Nov: immediate investigation","body":"We are investigating causes and will update."},
+      "reason":"Inform client",
+      "confidence":0.6
+    }
+  ],
+  "summary":"Immediate investigation and client communication recommended due to high CPA."
+}
+#######
+#######
+OUTPUT:
+{
+  "actions": [
+    {
+      "action_type": "create_task",
+      "details": {"task":"Investigate creatives for Piano Course Launch", "campaign_id":"piano_launch"},
+      "reason":"Possible bad creative",
+      "confidence": 0.6
+    },
+    {
+      "action_type": "create_task",
+      "details":{"task":"Analyze img_02 for Piano Course Launch"},
+      "reason":"Investigate img_02",
+      "confidence": 0.6
+    },
+    {
+      "action_type":"draft_email",
+      "details":{"to":"client@example.com","subject":"Piano Course Launch: immediate investigation","body":"We are investigating causes and will update."},
+      "reason":"Inform client",
+      "confidence":0.6
+    }
+  ],
+  "summary":"Immediate investigation and client communication recommended due to high CPA and daily spend."
+}
+######
+####### LOW BUDGET
+OUTPUT:
+{
+"actions": [
+    {
+      "action_type": "create_task",
+      "reason": "Investigate 'LeadGen Oct' campaign creatives on Google.",
+      "details": {
+        "task": "Investigate creative performance for LeadGen Oct"
+      },
+      "confidence": 0.6
+    },
+    {
+      "action_type": "create_task",
+      "reason": "Reduce cost",
+      "details": {
+        "task": "Prioritize top performing ads."
+      },
+      "confidence": 0.6
+    },
+    {
+      "action_type": "create_task",
+      "reason": "Reduce cost",
+      "details": {
+        "task": "Pause low performing ads."
+      },
+      "confidence": 0.6
+    },
+    {
+      "action_type": "create_task",
+      "reason": "Communicate actions to client.",
+      "details": {
+        "task": "Send prioritized ad sets and paused ads set update to client."
+      },
+      "confidence": 0.6
+    }
+  ],
+  "summary":"Prioritize top-performing ad sets, pause low-performing ones, suggest creative reschedule and communicate it to client."
+}
+######
+####### EXTERNAL EVENTS
+OUTPUT:
+{
+"actions": [
+    {
+      "action_type": "create_task",
+      "reason": "Investigate 'Retail BlackFriday' campaign creatives on instagram.",
+      "details": {
+        "task": "Investigate creative performance for Retail BlackFriday"
+      },
+      "confidence": 0.6
+    },
+    {
+      "action_type": "create_task",
+      "reason": "Analyze drivers for sudden drop.",
+      "details": {
+        "task": "Analyze bidding, targeting, competitive landscape"
+      },
+      "confidence": 0.6
+    },
+    {
+      "action_type": "create_task",
+      "reason": "Communicate actions to client.",
+      "details": {
+        "task": "Send update to client about investigation steps"
+      },
+      "confidence": 0.6
+    }
+  ],
+  "summary":"Consider pausing bids, test new creatives and alter targeting; communicate with client about temporary ROAS drop."
+}
+######

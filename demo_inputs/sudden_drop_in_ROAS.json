@@ -1,0 +1,29 @@
+{
+  "date": "2025-11-26",
+  "inputs": {
+    "notes": "ROAS dropped 50% overnight for retail campaign after we increased bids."
+  },
+  "analytics": {
+    "campaigns": [
+      {
+        "campaign_id": "retail_blackfriday",
+        "name": "Retail BlackFriday",
+        "channel": "instagram",
+        "daily_spend": 300.0,
+        "cpa": 40.0,
+        "target_cpa": 20.0,
+        "conversions_last_7d": 15,
+        "trend": "down"
+      }
+    ],
+    "external_events": [
+      {
+        "type": "competitor_promo",
+        "description": "Competitor started heavy discounting overnight"
+      }
+    ]
+  },
+  "expected": {
+    "notes": "Consider pausing bids, test new creatives and alter targeting; communicate with client about temporary ROAS drop."
+  }
+}
