@@ -1,0 +1,77 @@
+{
+  "run_at": "20251129T184953Z",
+  "demo_results": [
+    {
+      "scenario": "bad_creatives",
+      "rc": 0,
+      "raw_output": "2025-11-30 00:20:19,322 DEBUG rook_orchestrator.llm_client: [LLM attempt 1] using key ...YdS8FQ model=gemini-2.5-flash\n\nLow-confidence action requires approval:\n{\n  \"id\": \"88b5f567-f957-4062-8e97-08d18ab2e4d3\",\n  \"action_type\": \"create_task\",\n  \"details\": {\n    \"task\": \"candidates=[Candidate(\"\n  },\n  \"reason\": \"candidates=[Candidate(\",\n  \"confidence\": 0.6,\n  \"expected_impact\": null,\n  \"preconditions\": [],\n  \"rollback_plan\": null,\n  \"estimated_time_hours\": 0.0\n}\nApprove this action? [y/N]: Action skipped by user: create_task\n\nLow-confidence action requires approval:\n{\n  \"id\": \"eca55139-92ac-4dd9-a939-ff6fcb469a30\",\n  \"action_type\": \"create_task\",\n  \"details\": {\n    \"task\": \"automatic_function_calling_history=[] parsed=None\"\n  },\n  \"reason\": \"automatic_function_calling_history=[] parsed=None\",\n  \"confidence\": 0.6,\n  \"expected_impact\": null,\n  \"preconditions\": [],\n  \"rollback_plan\": null,\n  \"estimated_time_hours\": 0.0\n}\nApprove this action? [y/N]: Action skipped by user: create_task\n{\n  \"date\": \"2025-11-30\",\n  \"board\": {\n    \"date\": \"2025-11-30\",\n    \"inputs\": {\n      \"notes\": \"CTR dropped suddenly after creative swap on Facebook ads last week.\"\n    },\n    \"analytics\": {\n      \"campaigns\": [\n        {\n          \"campaign_id\": \"piano_launch\",\n          \"name\": \"Piano Course Launch\",\n          \"channel\": \"facebook\",\n          \"daily_spend\": 120.0,\n          \"cpa\": 18.0,\n          \"target_cpa\": 10.0,\n          \"conversions_last_7d\": 6,\n          \"trend\": \"down\"\n        }\n      ],\n      \"creative_stats\": [\n        {\n          \"creative_id\": \"vid_01\",\n          \"ctr\": 0.3,\n          \"impressions\": 10000,\n          \"last_updated\": \"2025-11-20\"\n        },\n        {\n          \"creative_id\": \"img_02\",\n          \"ctr\": 0.02,\n          \"impressions\": 8000,\n          \"last_updated\": \"2025-11-23\"\n        }\n      ]\n    }\n  },\n  \"insights\": {\n    \"campaign_insights\": [\n      {\n        \"campaign_id\": \"piano_launch\",\n        \"recommendation\": \"investigate_creatives\",\n        \"confidenc",
+      "llm_meta": {
+        "model": "gemini-2.5-flash",
+        "source": "gemini",
+        "api_key_masked": "...YdS8FQ"
+      },
+      "latest_sample": "llm_20251129T185842Z.json",
+      "latest_decision": "decision_20251129T185842Z.json"
+    },
+    {
+      "scenario": "campaign_spike",
+      "rc": 0,
+      "raw_output": "2025-11-30 00:28:44,665 DEBUG rook_orchestrator.llm_client: [LLM attempt 1] using key ...8kHKEQ model=gemini-2.5-flash\n\nLow-confidence action requires approval:\n{\n  \"id\": \"64885fed-d39c-4d54-95d7-c55cbb69e7dc\",\n  \"action_type\": \"create_task\",\n  \"details\": {\n    \"task\": \"candidates=[Candidate(\"\n  },\n  \"reason\": \"candidates=[Candidate(\",\n  \"confidence\": 0.6,\n  \"expected_impact\": null,\n  \"preconditions\": [],\n  \"rollback_plan\": null,\n  \"estimated_time_hours\": 0.0\n}\nApprove this action? [y/N]: Action skipped by user: create_task\n\nLow-confidence action requires approval:\n{\n  \"id\": \"b4f27fde-2324-4f39-a443-b30e7bbfbfdc\",\n  \"action_type\": \"create_task\",\n  \"details\": {\n    \"task\": \"automatic_function_calling_history=[] parsed=None\"\n  },\n  \"reason\": \"automatic_function_calling_history=[] parsed=None\",\n  \"confidence\": 0.6,\n  \"expected_impact\": null,\n  \"preconditions\": [],\n  \"rollback_plan\": null,\n  \"estimated_time_hours\": 0.0\n}\nApprove this action? [y/N]: Action skipped by user: create_task\n{\n  \"date\": \"2025-11-30\",\n  \"board\": {\n    \"date\": \"2025-11-30\",\n    \"inputs\": {\n      \"notes\": \"Client reports sudden cost increase for LeadGen Nov campaign.\"\n    },\n    \"analytics\": {\n      \"campaigns\": [\n        {\n          \"campaign_id\": \"leadgen_nov\",\n          \"name\": \"LeadGen Nov\",\n          \"channel\": \"facebook\",\n          \"daily_spend\": 50,\n          \"cpa\": 25.0,\n          \"target_cpa\": 12.0,\n          \"conversions_last_7d\": 10,\n          \"trend\": \"down\"\n        }\n      ]\n    }\n  },\n  \"insights\": {\n    \"campaign_insights\": [\n      {\n        \"campaign_id\": \"leadgen_nov\",\n        \"recommendation\": \"investigate_creatives\",\n        \"confidence\": 0.6\n      }\n    ],\n    \"risks\": [\n      {\n        \"campaign_id\": \"leadgen_nov\",\n        \"issue\": \"high_cpa\",\n        \"urgency\": 8,\n        \"note\": \"CPA 25.0 > target 12.0\"\n      }\n    ]\n  },\n  \"plan\": [],\n  \"results\": {\n    \"results\": []\n  },\n  \"llm_raw\": {\n    \"text\": \"sdk_http_response=HttpResponse(\\n  headers=<dict len=11>\\n) candidates=[Can",
+      "llm_meta": {
+        "model": "gemini-2.5-flash",
+        "source": "gemini",
+        "api_key_masked": "...8kHKEQ"
+      },
+      "latest_sample": "llm_20251129T185854Z.json",
+      "latest_decision": "decision_20251129T185854Z.json"
+    },
+    {
+      "scenario": "content_calendar",
+      "rc": 0,
+      "raw_output": "2025-11-30 00:28:56,603 DEBUG rook_orchestrator.llm_client: [LLM attempt 1] using key ...YdS8FQ model=gemini-2.5-flash\n\nLow-confidence action requires approval:\n{\n  \"id\": \"ec225739-b4d4-4af6-87ad-04298cea1bbc\",\n  \"action_type\": \"create_task\",\n  \"details\": {\n    \"task\": \"candidates=[Candidate(\"\n  },\n  \"reason\": \"candidates=[Candidate(\",\n  \"confidence\": 0.6,\n  \"expected_impact\": null,\n  \"preconditions\": [],\n  \"rollback_plan\": null,\n  \"estimated_time_hours\": 0.0\n}\nApprove this action? [y/N]: Action skipped by user: create_task\n\nLow-confidence action requires approval:\n{\n  \"id\": \"9aae6095-3977-4f34-aa58-02ce752fc791\",\n  \"action_type\": \"create_task\",\n  \"details\": {\n    \"task\": \"automatic_function_calling_history=[] parsed=None\"\n  },\n  \"reason\": \"automatic_function_calling_history=[] parsed=None\",\n  \"confidence\": 0.6,\n  \"expected_impact\": null,\n  \"preconditions\": [],\n  \"rollback_plan\": null,\n  \"estimated_time_hours\": 0.0\n}\nApprove this action? [y/N]: Action skipped by user: create_task\n{\n  \"date\": \"2025-11-30\",\n  \"board\": {\n    \"date\": \"2025-11-30\",\n    \"inputs\": {\n      \"notes\": \"Client wants a 1-week content calendar for Instagram promoting their new piano course.\"\n    },\n    \"analytics\": {\n      \"campaigns\": []\n    }\n  },\n  \"insights\": {\n    \"campaign_insights\": [],\n    \"risks\": []\n  },\n  \"plan\": [],\n  \"results\": {\n    \"results\": []\n  },\n  \"llm_raw\": {\n    \"text\": \"sdk_http_response=HttpResponse(\\n  headers=<dict len=11>\\n) candidates=[Candidate(\\n  content=Content(\\n    role='model'\\n  ),\\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\\n  index=0\\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='ekIraamHCtOujuMPnP2L6QQ' usage_metadata=GenerateContentResponseUsageMetadata(\\n  prompt_token_count=111,\\n  prompt_tokens_details=[\\n    ModalityTokenCount(\\n      modality=<MediaModality.TEXT: 'TEXT'>,\\n      token_count=111\\n    ),\\n  ],\\n  thoughts_token_count=1499,\\n  total_token_count=1610\\n) automatic_function_calling_histo",
+      "llm_meta": {
+        "model": "gemini-2.5-flash",
+        "source": "gemini",
+        "api_key_masked": "...YdS8FQ"
+      },
+      "latest_sample": "llm_20251129T185906Z.json",
+      "latest_decision": "decision_20251129T185906Z.json"
+    },
+    {
+      "scenario": "dev_overload",
+      "rc": 0,
+      "raw_output": "2025-11-30 00:29:08,403 DEBUG rook_orchestrator.llm_client: [LLM attempt 1] using key ...VHKHvU model=gemini-2.5-flash\n\nLow-confidence action requires approval:\n{\n  \"id\": \"154814b5-d9b2-4015-9d0a-97440604dd88\",\n  \"action_type\": \"create_task\",\n  \"details\": {\n    \"task\": \"\\\"reason\\\": \\\"Ajay is overloaded with 9 tasks while Sana has only 2. Reassigning tasks will balance the workload, reduce Ajay's burden, and utilize Sana's available capacity to ensure the client's module delivery deadline by Friday is met.\\\",\"\n  },\n  \"reason\": \"\\\"reason\\\": \\\"Ajay is overloaded with 9 tasks while Sana has only 2. Reassigning tasks will balance the workload, reduce Ajay's burden, and utilize Sana's available capacity to ensure the client's module delivery deadline by Friday is met.\\\",\",\n  \"confidence\": 0.6,\n  \"expected_impact\": null,\n  \"preconditions\": [],\n  \"rollback_plan\": null,\n  \"estimated_time_hours\": 0.0\n}\nApprove this action? [y/N]: Action skipped by user: create_task\n{\n  \"date\": \"2025-11-30\",\n  \"board\": {\n    \"date\": \"2025-11-30\",\n    \"inputs\": {\n      \"notes\": \"Backend developer Ajay is overloaded with 9 tasks this week. Sana has only 2 tasks. Client wants module delivery by Friday.\"\n    },\n    \"analytics\": {\n      \"team_load\": [\n        {\n          \"name\": \"Ajay\",\n          \"role\": \"backend_dev\",\n          \"tasks_assigned\": 9\n        },\n        {\n          \"name\": \"Sana\",\n          \"role\": \"backend_dev\",\n          \"tasks_assigned\": 2\n        }\n      ]\n    }\n  },\n  \"insights\": {\n    \"campaign_insights\": [],\n    \"risks\": []\n  },\n  \"plan\": [],\n  \"results\": {\n    \"results\": []\n  },\n  \"llm_raw\": {\n    \"text\": \"```json\\n{\\n  \\\"actions\\\": [\\n    {\\n      \\\"action_type\\\": \\\"reassign_tasks\\\",\\n      \\\"details\\\": {\\n        \\\"from_resource\\\": \\\"Ajay\\\",\\n        \\\"to_resource\\\": \\\"Sana\\\",\\n        \\\"number_of_tasks\\\": 4,\\n        \\\"task_priority_consideration\\\": \\\"prioritize_tasks_critical_for_module_delivery\\\"\\n      },\\n      \\\"reason\\\": \\\"Ajay is overloaded with 9 tasks while Sana ha",
+      "llm_meta": {
+        "model": "gemini-2.5-flash",
+        "source": "gemini",
+        "api_key_masked": "...VHKHvU"
+      },
+      "latest_sample": "llm_20251129T185918Z.json",
+      "latest_decision": "decision_20251129T185918Z.json"
+    },
+    {
+      "scenario": "low_budget",
+      "rc": 0,
+      "raw_output": "2025-11-30 00:29:20,083 DEBUG rook_orchestrator.llm_client: [LLM attempt 1] using key ...8kHKEQ model=gemini-2.5-flash\n\nLow-confidence action requires approval:\n{\n  \"id\": \"11a61b53-4f56-48ee-9667-f31b2e36afbb\",\n  \"action_type\": \"create_task\",\n  \"details\": {\n    \"task\": \"candidates=[Candidate(\"\n  },\n  \"reason\": \"candidates=[Candidate(\",\n  \"confidence\": 0.6,\n  \"expected_impact\": null,\n  \"preconditions\": [],\n  \"rollback_plan\": null,\n  \"estimated_time_hours\": 0.0\n}\nApprove this action? [y/N]: Action skipped by user: create_task\n\nLow-confidence action requires approval:\n{\n  \"id\": \"430c4c80-24a4-4acf-bb5d-fb2fdd802d4c\",\n  \"action_type\": \"create_task\",\n  \"details\": {\n    \"task\": \"automatic_function_calling_history=[] parsed=None\"\n  },\n  \"reason\": \"automatic_function_calling_history=[] parsed=None\",\n  \"confidence\": 0.6,\n  \"expected_impact\": null,\n  \"preconditions\": [],\n  \"rollback_plan\": null,\n  \"estimated_time_hours\": 0.0\n}\nApprove this action? [y/N]: Action skipped by user: create_task\n{\n  \"date\": \"2025-11-30\",\n  \"board\": {\n    \"date\": \"2025-11-30\",\n    \"inputs\": {\n      \"notes\": \"Client reduced budget mid-month and wants recommendations to maximize conversions.\"\n    },\n    \"analytics\": {\n      \"campaigns\": [\n        {\n          \"campaign_id\": \"leadgen_oct\",\n          \"name\": \"LeadGen Oct\",\n          \"channel\": \"google\",\n          \"daily_spend\": 10.0,\n          \"cpa\": 30.0,\n          \"target_cpa\": 15.0,\n          \"conversions_last_7d\": 3,\n          \"trend\": \"down\"\n        }\n      ]\n    }\n  },\n  \"insights\": {\n    \"campaign_insights\": [\n      {\n        \"campaign_id\": \"leadgen_oct\",\n        \"recommendation\": \"investigate_creatives\",\n        \"confidence\": 0.6\n      }\n    ],\n    \"risks\": [\n      {\n        \"campaign_id\": \"leadgen_oct\",\n        \"issue\": \"high_cpa\",\n        \"urgency\": 8,\n        \"note\": \"CPA 30.0 > target 15.0\"\n      }\n    ]\n  },\n  \"plan\": [],\n  \"results\": {\n    \"results\": []\n  },\n  \"llm_raw\": {\n    \"text\": \"sdk_http_response=HttpResponse(\\n  headers=<dict len=11",
+      "llm_meta": {
+        "model": "gemini-2.5-flash",
+        "source": "gemini",
+        "api_key_masked": "...8kHKEQ"
+      },
+      "latest_sample": "llm_20251129T185929Z.json",
+      "latest_decision": "decision_20251129T185929Z.json"
+    },
+    {
+      "scenario": "sudden_drop_in_ROAS",
+      "rc": 0,
+      "raw_output": "2025-11-30 00:29:31,573 DEBUG rook_orchestrator.llm_client: [LLM attempt 1] using key ...QFFZ58 model=gemini-2.5-flash\n\nLow-confidence action requires approval:\n{\n  \"id\": \"f7581d8d-8306-4d24-b75e-67b7a9e9abbf\",\n  \"action_type\": \"create_task\",\n  \"details\": {\n    \"task\": \"candidates=[Candidate(\"\n  },\n  \"reason\": \"candidates=[Candidate(\",\n  \"confidence\": 0.6,\n  \"expected_impact\": null,\n  \"preconditions\": [],\n  \"rollback_plan\": null,\n  \"estimated_time_hours\": 0.0\n}\nApprove this action? [y/N]: Action skipped by user: create_task\n\nLow-confidence action requires approval:\n{\n  \"id\": \"68a590f6-ccb1-45a6-9cdc-6ceef63effec\",\n  \"action_type\": \"create_task\",\n  \"details\": {\n    \"task\": \"automatic_function_calling_history=[] parsed=None\"\n  },\n  \"reason\": \"automatic_function_calling_history=[] parsed=None\",\n  \"confidence\": 0.6,\n  \"expected_impact\": null,\n  \"preconditions\": [],\n  \"rollback_plan\": null,\n  \"estimated_time_hours\": 0.0\n}\nApprove this action? [y/N]: Action skipped by user: create_task\n{\n  \"date\": \"2025-11-30\",\n  \"board\": {\n    \"date\": \"2025-11-30\",\n    \"inputs\": {\n      \"notes\": \"ROAS dropped 50% overnight for retail campaign after we increased bids.\"\n    },\n    \"analytics\": {\n      \"campaigns\": [\n        {\n          \"campaign_id\": \"retail_blackfriday\",\n          \"name\": \"Retail BlackFriday\",\n          \"channel\": \"instagram\",\n          \"daily_spend\": 300.0,\n          \"cpa\": 40.0,\n          \"target_cpa\": 20.0,\n          \"conversions_last_7d\": 15,\n          \"trend\": \"down\"\n        }\n      ],\n      \"external_events\": [\n        {\n          \"type\": \"competitor_promo\",\n          \"description\": \"Competitor started heavy discounting overnight\"\n        }\n      ]\n    }\n  },\n  \"insights\": {\n    \"campaign_insights\": [\n      {\n        \"campaign_id\": \"retail_blackfriday\",\n        \"recommendation\": \"investigate_creatives\",\n        \"confidence\": 0.6\n      }\n    ],\n    \"risks\": [\n      {\n        \"campaign_id\": \"retail_blackfriday\",\n        \"issue\": \"high_cpa\",\n        \"urgency\": 8,\n     ",
+      "llm_meta": {
+        "model": "gemini-2.5-flash",
+        "source": "gemini",
+        "api_key_masked": "...QFFZ58"
+      },
+      "latest_sample": "llm_20251129T185941Z.json",
+      "latest_decision": "decision_20251129T185941Z.json"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "date": "2025-11-30",
+  "board": {
+    "date": "2025-11-30",
+    "inputs": {
+      "notes": "CTR dropped suddenly after creative swap on Facebook ads last week."
+    },
+    "analytics": {
+      "campaigns": [
+        {
+          "campaign_id": "piano_launch",
+          "name": "Piano Course Launch",
+          "channel": "facebook",
+          "daily_spend": 120.0,
+          "cpa": 18.0,
+          "target_cpa": 10.0,
+          "conversions_last_7d": 6,
+          "trend": "down"
+        }
+      ],
+      "creative_stats": [
+        {
+          "creative_id": "vid_01",
+          "ctr": 0.3,
+          "impressions": 10000,
+          "last_updated": "2025-11-20"
+        },
+        {
+          "creative_id": "img_02",
+          "ctr": 0.02,
+          "impressions": 8000,
+          "last_updated": "2025-11-23"
+        }
+      ]
+    }
+  },
+  "insights": {
+    "campaign_insights": [
+      {
+        "campaign_id": "piano_launch",
+        "recommendation": "investigate_creatives",
+        "confidence": 0.6
+      }
+    ],
+    "risks": [
+      {
+        "campaign_id": "piano_launch",
+        "issue": "high_cpa",
+        "urgency": 8,
+        "note": "CPA 18.0 > target 10.0"
+      }
+    ]
+  },
+  "plan": [],
+  "results": {
+    "results": []
+  },
+  "llm_raw": {
+    "text": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='dUArab_hFdCAg8UPydu5mQs' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=309,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=309\n    ),\n  ],\n  thoughts_token_count=1499,\n  total_token_count=1808\n) automatic_function_calling_history=[] parsed=None",
+    "meta": {
+      "model": "gemini-2.5-flash",
+      "source": "gemini",
+      "api_key_masked": "...YdS8FQ"
+    },
+    "raw_str": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='dUArab_hFdCAg8UPydu5mQs' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=309,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=309\n    ),\n  ],\n  thoughts_token_count=1499,\n  total_token_count=1808\n) automatic_function_calling_history=[] parsed=None"
+  }
+}

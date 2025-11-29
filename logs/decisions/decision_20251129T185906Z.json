@@ -1,0 +1,29 @@
+{
+  "date": "2025-11-30",
+  "board": {
+    "date": "2025-11-30",
+    "inputs": {
+      "notes": "Client wants a 1-week content calendar for Instagram promoting their new piano course."
+    },
+    "analytics": {
+      "campaigns": []
+    }
+  },
+  "insights": {
+    "campaign_insights": [],
+    "risks": []
+  },
+  "plan": [],
+  "results": {
+    "results": []
+  },
+  "llm_raw": {
+    "text": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='ekIraamHCtOujuMPnP2L6QQ' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=111,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=111\n    ),\n  ],\n  thoughts_token_count=1499,\n  total_token_count=1610\n) automatic_function_calling_history=[] parsed=None",
+    "meta": {
+      "model": "gemini-2.5-flash",
+      "source": "gemini",
+      "api_key_masked": "...YdS8FQ"
+    },
+    "raw_str": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='ekIraamHCtOujuMPnP2L6QQ' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=111,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=111\n    ),\n  ],\n  thoughts_token_count=1499,\n  total_token_count=1610\n) automatic_function_calling_history=[] parsed=None"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "date": "2025-11-30",
+  "board": {
+    "date": "2025-11-30",
+    "inputs": {
+      "notes": "ROAS dropped 50% overnight for retail campaign after we increased bids."
+    },
+    "analytics": {
+      "campaigns": [
+        {
+          "campaign_id": "retail_blackfriday",
+          "name": "Retail BlackFriday",
+          "channel": "instagram",
+          "daily_spend": 300.0,
+          "cpa": 40.0,
+          "target_cpa": 20.0,
+          "conversions_last_7d": 15,
+          "trend": "down"
+        }
+      ],
+      "external_events": [
+        {
+          "type": "competitor_promo",
+          "description": "Competitor started heavy discounting overnight"
+        }
+      ]
+    }
+  },
+  "insights": {
+    "campaign_insights": [
+      {
+        "campaign_id": "retail_blackfriday",
+        "recommendation": "investigate_creatives",
+        "confidence": 0.6
+      }
+    ],
+    "risks": [
+      {
+        "campaign_id": "retail_blackfriday",
+        "issue": "high_cpa",
+        "urgency": 8,
+        "note": "CPA 40.0 > target 20.0"
+      }
+    ]
+  },
+  "plan": [],
+  "results": {
+    "results": []
+  },
+  "llm_raw": {
+    "text": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='nEIraZTFO4WBjuMPqanj4Ag' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=255,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=255\n    ),\n  ],\n  thoughts_token_count=1499,\n  total_token_count=1754\n) automatic_function_calling_history=[] parsed=None",
+    "meta": {
+      "model": "gemini-2.5-flash",
+      "source": "gemini",
+      "api_key_masked": "...QFFZ58"
+    },
+    "raw_str": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='nEIraZTFO4WBjuMPqanj4Ag' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=255,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=255\n    ),\n  ],\n  thoughts_token_count=1499,\n  total_token_count=1754\n) automatic_function_calling_history=[] parsed=None"
+  }
+}
