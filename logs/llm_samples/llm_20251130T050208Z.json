@@ -1,0 +1,23 @@
+{
+  "text": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='zM8raZifDP3ajuMPw9TZkAo' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=324,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=324\n    ),\n  ],\n  thoughts_token_count=399,\n  total_token_count=723\n) automatic_function_calling_history=[] parsed=None",
+  "raw": null,
+  "meta": {
+    "model": "gemini-2.5-flash",
+    "source": "gemini",
+    "api_key_masked": "...8kHKEQ"
+  },
+  "_repair_attempt": {
+    "repaired_text_snippet": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='z88rafLfOvXMg8UPmarlqAs' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=268,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=268\n    ),\n  ],\n  thoughts_token_count=199,\n  total_token_count=467\n) automatic_function_calling_history=[] parsed=None",
+    "repair_meta": {
+      "model": "gemini-2.5-flash",
+      "source": "gemini",
+      "api_key_masked": "...8kHKEQ"
+    }
+  },
+  "_parse_status": "failed",
+  "raw_str": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='zM8raZifDP3ajuMPw9TZkAo' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=324,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=324\n    ),\n  ],\n  thoughts_token_count=399,\n  total_token_count=723\n) automatic_function_calling_history=[] parsed=None",
+  "parsed": {
+    "actions": [],
+    "summary": "parse_failed"
+  }
+}

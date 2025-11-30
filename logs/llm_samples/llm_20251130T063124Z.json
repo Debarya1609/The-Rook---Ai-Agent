@@ -1,0 +1,47 @@
+{
+  "text": "{\"actions\":[{\"action_type\":\"adjust_bidding_strategy\",\"details\":{\"campaign_id\":\"leadgen_oct\",\"platform\":\"google\",\"strategy\":\"target_cpa\",\"target_cpa\":15.0},\"reason\":\"CPA is double the target; optimize for conversions within reduced budget.\",\"confidence\":0.9},{\"action_type\":\"pause_elements\",\"details\":{\"campaign_id\":\"leadgen_oct\",\"platform\":\"google\",\"element_type\":\"keywords_ads\",\"criteria\":\"high_cpa_low_conversions\"},\"reason\":\"Eliminate wasted spend on underperforming elements to maximize conversions.\",\"confidence\":0.8},{\"action_type\":\"review_targeting\",\"details\":{\"campaign_id\":\"leadgen_oct\",\"platform\":\"google\",\"focus\":\"audience_demographics_interests\"},\"reason\":\"Ensure budget is spent on most relevant audiences to improve conversion rate.\",\"confidence\":0.7}],\"summary\":\"Optimize bidding, pause underperformers, and refine targeting to maximize conversions with reduced budget.\"}",
+  "raw": null,
+  "meta": {
+    "model": "gemini-2.5-flash",
+    "source": "gemini",
+    "api_key_masked": "...8kHKEQ"
+  },
+  "raw_str": "{\"actions\":[{\"action_type\":\"adjust_bidding_strategy\",\"details\":{\"campaign_id\":\"leadgen_oct\",\"platform\":\"google\",\"strategy\":\"target_cpa\",\"target_cpa\":15.0},\"reason\":\"CPA is double the target; optimize for conversions within reduced budget.\",\"confidence\":0.9},{\"action_type\":\"pause_elements\",\"details\":{\"campaign_id\":\"leadgen_oct\",\"platform\":\"google\",\"element_type\":\"keywords_ads\",\"criteria\":\"high_cpa_low_conversions\"},\"reason\":\"Eliminate wasted spend on underperforming elements to maximize conversions.\",\"confidence\":0.8},{\"action_type\":\"review_targeting\",\"details\":{\"campaign_id\":\"leadgen_oct\",\"platform\":\"google\",\"focus\":\"audience_demographics_interests\"},\"reason\":\"Ensure budget is spent on most relevant audiences to improve conversion rate.\",\"confidence\":0.7}],\"summary\":\"Optimize bidding, pause underperformers, and refine targeting to maximize conversions with reduced budget.\"}",
+  "parsed": {
+    "actions": [
+      {
+        "action_type": "adjust_bidding_strategy",
+        "details": {
+          "campaign_id": "leadgen_oct",
+          "platform": "google",
+          "strategy": "target_cpa",
+          "target_cpa": 15.0
+        },
+        "reason": "CPA is double the target; optimize for conversions within reduced budget.",
+        "confidence": 0.9
+      },
+      {
+        "action_type": "pause_elements",
+        "details": {
+          "campaign_id": "leadgen_oct",
+          "platform": "google",
+          "element_type": "keywords_ads",
+          "criteria": "high_cpa_low_conversions"
+        },
+        "reason": "Eliminate wasted spend on underperforming elements to maximize conversions.",
+        "confidence": 0.8
+      },
+      {
+        "action_type": "review_targeting",
+        "details": {
+          "campaign_id": "leadgen_oct",
+          "platform": "google",
+          "focus": "audience_demographics_interests"
+        },
+        "reason": "Ensure budget is spent on most relevant audiences to improve conversion rate.",
+        "confidence": 0.7
+      }
+    ],
+    "summary": "Optimize bidding, pause underperformers, and refine targeting to maximize conversions with reduced budget."
+  }
+}

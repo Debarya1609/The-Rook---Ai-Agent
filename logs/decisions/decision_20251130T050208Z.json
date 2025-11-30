@@ -1,0 +1,155 @@
+{
+  "date": "2025-11-30",
+  "board": {
+    "date": "2025-11-30",
+    "inputs": {
+      "notes": "Client reduced budget mid-month and wants recommendations to maximize conversions."
+    },
+    "analytics": {
+      "campaigns": [
+        {
+          "campaign_id": "leadgen_oct",
+          "name": "LeadGen Oct",
+          "channel": "google",
+          "daily_spend": 10.0,
+          "cpa": 30.0,
+          "target_cpa": 15.0,
+          "conversions_last_7d": 3,
+          "trend": "down"
+        }
+      ]
+    }
+  },
+  "insights": {
+    "campaign_insights": [
+      {
+        "campaign_id": "leadgen_oct",
+        "recommendation": "investigate_creatives",
+        "confidence": 0.6
+      }
+    ],
+    "risks": [
+      {
+        "campaign_id": "leadgen_oct",
+        "issue": "high_cpa",
+        "urgency": 8,
+        "note": "CPA 30.0 > target 15.0"
+      }
+    ]
+  },
+  "plan": [
+    {
+      "id": "ea872820-d163-4cda-9c6a-f1919bdcbbb6",
+      "action_type": "create_task",
+      "details": {
+        "task": "candidates=[Candidate("
+      },
+      "reason": "candidates=[Candidate(",
+      "confidence": 0.6,
+      "expected_impact": null,
+      "preconditions": [],
+      "rollback_plan": null,
+      "estimated_time_hours": 0.0
+    },
+    {
+      "id": "26740506-b923-4817-9a6a-1dc7cc67add1",
+      "action_type": "create_task",
+      "details": {
+        "task": "automatic_function_calling_history=[] parsed=None"
+      },
+      "reason": "automatic_function_calling_history=[] parsed=None",
+      "confidence": 0.6,
+      "expected_impact": null,
+      "preconditions": [],
+      "rollback_plan": null,
+      "estimated_time_hours": 0.0
+    }
+  ],
+  "results": {
+    "results": [
+      {
+        "action": {
+          "id": "ea872820-d163-4cda-9c6a-f1919bdcbbb6",
+          "action_type": "create_task",
+          "details": {
+            "task": "candidates=[Candidate("
+          },
+          "reason": "candidates=[Candidate(",
+          "confidence": 0.6,
+          "expected_impact": null,
+          "preconditions": [],
+          "rollback_plan": null,
+          "estimated_time_hours": 0.0
+        },
+        "result": {
+          "ok": true,
+          "task_id": "6064b032-6853-4b08-b65f-d0f4f3e3c87a",
+          "task": {
+            "task_id": "6064b032-6853-4b08-b65f-d0f4f3e3c87a",
+            "task": "candidates=[Candidate(",
+            "assignee": null,
+            "due": null,
+            "meta": {
+              "task": "candidates=[Candidate("
+            }
+          }
+        }
+      },
+      {
+        "action": {
+          "id": "26740506-b923-4817-9a6a-1dc7cc67add1",
+          "action_type": "create_task",
+          "details": {
+            "task": "automatic_function_calling_history=[] parsed=None"
+          },
+          "reason": "automatic_function_calling_history=[] parsed=None",
+          "confidence": 0.6,
+          "expected_impact": null,
+          "preconditions": [],
+          "rollback_plan": null,
+          "estimated_time_hours": 0.0
+        },
+        "result": {
+          "ok": true,
+          "task_id": "258dce59-196c-411e-8ea3-8308d53603c8",
+          "task": {
+            "task_id": "258dce59-196c-411e-8ea3-8308d53603c8",
+            "task": "automatic_function_calling_history=[] parsed=None",
+            "assignee": null,
+            "due": null,
+            "meta": {
+              "task": "automatic_function_calling_history=[] parsed=None"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "llm_raw": {
+    "text": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='zM8raZifDP3ajuMPw9TZkAo' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=324,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=324\n    ),\n  ],\n  thoughts_token_count=399,\n  total_token_count=723\n) automatic_function_calling_history=[] parsed=None",
+    "raw": null,
+    "meta": {
+      "model": "gemini-2.5-flash",
+      "source": "gemini",
+      "api_key_masked": "...8kHKEQ"
+    },
+    "_repair_attempt": {
+      "repaired_text_snippet": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='z88rafLfOvXMg8UPmarlqAs' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=268,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=268\n    ),\n  ],\n  thoughts_token_count=199,\n  total_token_count=467\n) automatic_function_calling_history=[] parsed=None",
+      "repair_meta": {
+        "model": "gemini-2.5-flash",
+        "source": "gemini",
+        "api_key_masked": "...8kHKEQ"
+      }
+    },
+    "_parse_status": "failed",
+    "raw_str": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='zM8raZifDP3ajuMPw9TZkAo' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=324,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=324\n    ),\n  ],\n  thoughts_token_count=399,\n  total_token_count=723\n) automatic_function_calling_history=[] parsed=None",
+    "parsed": {
+      "actions": [],
+      "summary": "parse_failed"
+    }
+  },
+  "llm_parsed": {
+    "actions": [],
+    "summary": "parse_failed"
+  }
+}
