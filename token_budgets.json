@@ -1,0 +1,74 @@
+{
+  "bad_creatives.json": {
+    "prompt_tokens": 48,
+    "thoughts_tokens": 1276,
+    "total_tokens": 2046,
+    "text_snippet": "Here's an analysis and action plan based on the notes:\n\n**Problem:** CTR dropped suddenly after a creative swap, leading to a significantly higher CPA ($18.0) than the target ($10.0) for the `piano_launch` campaign on Facebook.\n\n**Analysis:**\n\n*   **Direct Cause:** The new creative is almost certainly the culprit. A sudden drop in CTR immediately after a creative change points directly to the creative itself not resonating with the audience.\n*   **Impact:** Lower CTR means fewer clicks for the same number of impressions. This typically leads to:\n    *   Higher CPMs (Cost Per Mille/1000 impressions) because Facebook's algorithm penalizes ads with low engagement.\n    *   Higher CPCs (Cost Per Click).\n    *   Ultimately, a much higher CPA, as seen ($18.0 vs $10.0 target).\n*   **Campaign Conte",
+    "raw_meta": {
+      "model": "gemini-2.5-flash",
+      "source": "gemini",
+      "api_key_masked": "...QFFZ58"
+    },
+    "recommended": 1588
+  },
+  "campaign_spike.json": {
+    "prompt_tokens": 45,
+    "thoughts_tokens": 1323,
+    "total_tokens": 2040,
+    "text_snippet": "This is a clear indicator of a significant performance issue.\n\nHere's a breakdown and proposed next steps:\n\n**Analysis:**\n\n*   **Campaign:** LeadGen Nov\n*   **Platform:** Facebook\n*   **Current CPA:** $25.00\n*   **Target CPA:** $12.00\n*   **Discrepancy:** The current CPA is **more than double** the target CPA (a 108% increase). This directly explains the client's \"sudden cost increase.\"\n*   **Spend:** $50 (This is relatively low, so the spike might be recent or on a smaller scale, but the *rate* is the problem).\n*   **Trend:** `trend:down` - This is slightly ambiguous. Given the client's complaint of \"cost increase,\" it's highly probable this refers to a downward trend in *performance/efficiency* (meaning CPA is going *up*), rather than CPA itself trending down. **Clarification needed on w",
+    "raw_meta": {
+      "model": "gemini-2.5-flash",
+      "source": "gemini",
+      "api_key_masked": "...QFFZ58"
+    },
+    "recommended": 1641
+  },
+  "content_calendar.json": {
+    "prompt_tokens": 20,
+    "thoughts_tokens": 1451,
+    "total_tokens": 2018,
+    "text_snippet": "Here's a 1-week Instagram content calendar designed to promote a new piano course, focusing on engagement, education, and conversion.\n\n---\n\n## Instagram Content Calendar: New Piano Course Launch (1 Week)\n\n**Goal:** Generate awareness, drive interest, and encourage sign-ups for the new piano course.\n\n**Target Audience:** Aspiring musicians, beginners, adults looking for a new hobby, parents considering lessons for their children (adjust tone accordingly).\n\n**Key Hashtags (Mix & Match):**\n#PianoCourse #LearnPiano #BeginnerPiano #OnlinePianoLessons #MusicEducation #NewSkill #PianoJourney #PlayPiano #MusicLover #CreativeLife #UnlockYourPotential #MusicLessons #DigitalPiano #KeyboardLessons #PianistLife #MusicForBeginners #[YourCourseName]\n\n---\n\n### **General Strategy Notes:**\n\n*   **Visuals:**",
+    "raw_meta": {
+      "model": "gemini-2.5-flash",
+      "source": "gemini",
+      "api_key_masked": "...1UVKPc"
+    },
+    "recommended": 1765
+  },
+  "dev_overload.json": {
+    "prompt_tokens": 29,
+    "thoughts_tokens": 936,
+    "total_tokens": 1625,
+    "text_snippet": "This situation requires immediate action to ensure the module delivery by Friday and to balance the team's workload.\n\nHere's a breakdown of the issues and recommended actions:\n\n**Key Issues:**\n\n1.  **Workload Imbalance:** Ajay is severely overloaded (9 tasks), while Sana is underutilized (2 tasks).\n2.  **Deadline Risk:** Ajay's overload directly threatens the Friday delivery deadline for the client module.\n3.  **Potential Burnout:** Ajay is at risk of stress and burnout.\n4.  **Inefficient Resource Utilization:** Sana's capacity is not being fully leveraged.\n\n**Recommended Actions (Prioritized):**\n\n1.  **Immediate Task Review & Prioritization (Today):**\n    *   **Meet with Ajay:** Understand his 9 tasks. Which ones are critical for the Friday module delivery? Which are less urgent or can be",
+    "raw_meta": {
+      "model": "gemini-2.5-flash",
+      "source": "gemini",
+      "api_key_masked": "...YdS8FQ"
+    },
+    "recommended": 1165
+  },
+  "low_budget.json": {
+    "prompt_tokens": 49,
+    "thoughts_tokens": 1276,
+    "total_tokens": 2047,
+    "text_snippet": "Okay, this is a critical situation. The client has reduced budget mid-month, their current CPA is double the target, and performance is trending downwards. We need to act fast and decisively to maximize conversions with the remaining budget.\n\nHere are the recommendations:\n\n---\n\n**Client Situation:**\n*   **Budget Reduction:** Mid-month budget cut.\n*   **Performance:** Current CPA ($30.0) is double the target CPA ($15.0).\n*   **Trend:** Performance is declining.\n*   **Goal:** Maximize conversions with the reduced budget.\n\n---\n\n**Recommendations to Maximize Conversions with Reduced Budget:**\n\n**1. Immediate Cost Control & Efficiency Focus (High Priority):**\n\n*   **Pause Underperforming Elements:**\n    *   **Keywords:** Immediately pause any keywords with high CPA, low conversion rates, or zer",
+    "raw_meta": {
+      "model": "gemini-2.5-flash",
+      "source": "gemini",
+      "api_key_masked": "...YdS8FQ"
+    },
+    "recommended": 1590
+  },
+  "sudden_drop_in_ROAS.json": {
+    "prompt_tokens": 53,
+    "thoughts_tokens": 1572,
+    "total_tokens": 2050,
+    "text_snippet": "This is a critical issue requiring immediate attention. A 50% ROAS drop overnight after increasing bids, especially during a high-stakes period like Black Friday, indicates a significant problem with efficiency. Your current CPA of $40 is double your target of $20, confirming the severe underperformance.\n\nHere's an analysis and recommended next steps:\n\n---\n\n### Analysis of ROAS Drop After Bid Increase\n\n**Problem:** Significant ROAS drop (50%) overnight for the `retail_blackfriday` Instagram campaign after increasing bids. Current CPA ($40) is double the target ($20), indicating a severe efficiency issue.\n\n**Potential Causes:**\n\n1.  **Audience Saturation/Quality Degradation:**\n    *   **Hypothesis:** Increasing bids often pushes campaigns into broader, less qualified audiences, especially i",
+    "raw_meta": {
+      "model": "gemini-2.5-flash",
+      "source": "gemini",
+      "api_key_masked": "...1UVKPc"
+    },
+    "recommended": 1950
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "final": {
+    "to": "client@example.com",
+    "subject": "sdk_http_response=HttpResponse(",
+    "body": "headers=<dict len=11>\n) candidates=[Candidate(\ncontent=Content(\nrole='model'\n),\nfinish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\nindex=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='6Fssaf9xhMeO4w-ntNwR' usage_metadata=GenerateContentResponseUsageMetadata(\nprompt_token_count=959,\nprompt_tokens_details=[\nModalityTokenCount(\nmodality=<MediaModality.TEXT: 'TEXT'>,\ntoken_count=959\n),\n],\nthoughts_token_count=476,\ntotal_token_count=1435\n) automatic_function_calling_history=[] parsed=None",
+    "meta": {}
+  },
+  "workers": [
+    {
+      "to": "client@example.com",
+      "subject": "sdk_http_response=HttpResponse(",
+      "body": "headers=<dict len=11>\n) candidates=[Candidate(\ncontent=Content(\nrole='model'\n),\nfinish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\nindex=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='2VssadXrB8bHjuMPxeCMuAM' usage_metadata=GenerateContentResponseUsageMetadata(\nprompt_token_count=290,\nprompt_tokens_details=[\nModalityTokenCount(\nmodality=<MediaModality.TEXT: 'TEXT'>,\ntoken_count=290\n),\n],\nthoughts_token_count=317,\ntotal_token_count=607\n) automatic_function_calling_history=[] parsed=None",
+      "meta": {
+        "worker_raw_meta": {
+          "model": "gemini-2.5-flash",
+          "source": "gemini",
+          "api_key_masked": "...1UVKPc"
+        }
+      }
+    },
+    {
+      "to": "client@example.com",
+      "subject": "sdk_http_response=HttpResponse(",
+      "body": "headers=<dict len=11>\n) candidates=[Candidate(\ncontent=Content(\nrole='model'\n),\nfinish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\nindex=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='11ssaZTNGLDQjuMPqfS9KQ' usage_metadata=GenerateContentResponseUsageMetadata(\nprompt_token_count=290,\nprompt_tokens_details=[\nModalityTokenCount(\nmodality=<MediaModality.TEXT: 'TEXT'>,\ntoken_count=290\n),\n],\nthoughts_token_count=317,\ntotal_token_count=607\n) automatic_function_calling_history=[] parsed=None",
+      "meta": {
+        "worker_raw_meta": {
+          "model": "gemini-2.5-flash",
+          "source": "gemini",
+          "api_key_masked": "...8kHKEQ"
+        }
+      }
+    },
+    {
+      "to": "client@example.com",
+      "subject": "sdk_http_response=HttpResponse(",
+      "body": "headers=<dict len=11>\n) candidates=[Candidate(\ncontent=Content(\nrole='model'\n),\nfinish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\nindex=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='2Vssaa3cNMKyg8UPobiFSQ' usage_metadata=GenerateContentResponseUsageMetadata(\nprompt_token_count=290,\nprompt_tokens_details=[\nModalityTokenCount(\nmodality=<MediaModality.TEXT: 'TEXT'>,\ntoken_count=290\n),\n],\nthoughts_token_count=317,\ntotal_token_count=607\n) automatic_function_calling_history=[] parsed=None",
+      "meta": {
+        "worker_raw_meta": {
+          "model": "gemini-2.5-flash",
+          "source": "gemini",
+          "api_key_masked": "...YdS8FQ"
+        }
+      }
+    }
+  ],
+  "raw_workers": [
+    {
+      "text": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='2VssadXrB8bHjuMPxeCMuAM' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=290,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=290\n    ),\n  ],\n  thoughts_token_count=317,\n  total_token_count=607\n) automatic_function_calling_history=[] parsed=None",
+      "raw": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='2VssadXrB8bHjuMPxeCMuAM' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=290,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=290\n    ),\n  ],\n  thoughts_token_count=317,\n  total_token_count=607\n) automatic_function_calling_history=[] parsed=None",
+      "meta": {
+        "model": "gemini-2.5-flash",
+        "source": "gemini",
+        "api_key_masked": "...1UVKPc"
+      },
+      "_repair_attempt": {
+        "attempt": "extract_from_text",
+        "repaired_text_snippet": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='3VssaZaOCpuq4-EPw--ImAI' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=266,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=266\n    ),\n  ],\n  thoughts_token_count=199,\n  total_token_count=465\n) automatic_function_calling_history=[] parsed=None",
+        "repair_meta": {
+          "model": "gemini-2.5-flash",
+          "source": "gemini",
+          "api_key_masked": "...8kHKEQ"
+        }
+      },
+      "_repair_attempt_2": {
+        "attempt": "regenerate_from_scenario",
+        "repaired_text_snippet": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='4VssacSeEJzKjuMP9dnU-Ag' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=187,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=187\n    ),\n  ],\n  thoughts_token_count=199,\n  total_token_count=386\n) automatic_function_calling_history=[] parsed=None",
+        "repair_meta": {
+          "model": "gemini-2.5-flash",
+          "source": "gemini",
+          "api_key_masked": "...VHKHvU"
+        }
+      },
+      "_parse_status": "failed"
+    },
+    {
+      "text": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='11ssaZTNGLDQjuMPqfS9KQ' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=290,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=290\n    ),\n  ],\n  thoughts_token_count=317,\n  total_token_count=607\n) automatic_function_calling_history=[] parsed=None",
+      "raw": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='11ssaZTNGLDQjuMPqfS9KQ' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=290,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=290\n    ),\n  ],\n  thoughts_token_count=317,\n  total_token_count=607\n) automatic_function_calling_history=[] parsed=None",
+      "meta": {
+        "model": "gemini-2.5-flash",
+        "source": "gemini",
+        "api_key_masked": "...8kHKEQ"
+      },
+      "_repair_attempt": {
+        "attempt": "extract_from_text",
+        "repaired_text_snippet": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='3VssaayDKaTZjuMPvqCtuAE' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=265,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=265\n    ),\n  ],\n  thoughts_token_count=199,\n  total_token_count=464\n) automatic_function_calling_history=[] parsed=None",
+        "repair_meta": {
+          "model": "gemini-2.5-flash",
+          "source": "gemini",
+          "api_key_masked": "...8kHKEQ"
+        }
+      },
+      "_repair_attempt_2": {
+        "attempt": "regenerate_from_scenario",
+        "repaired_text_snippet": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='4lssad_cBvGmjuMPgv-3AQ' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=187,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=187\n    ),\n  ],\n  thoughts_token_count=199,\n  total_token_count=386\n) automatic_function_calling_history=[] parsed=None",
+        "repair_meta": {
+          "model": "gemini-2.5-flash",
+          "source": "gemini",
+          "api_key_masked": "...1UVKPc"
+        }
+      },
+      "_parse_status": "failed"
+    },
+    {
+      "text": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='2Vssaa3cNMKyg8UPobiFSQ' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=290,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=290\n    ),\n  ],\n  thoughts_token_count=317,\n  total_token_count=607\n) automatic_function_calling_history=[] parsed=None",
+      "raw": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='2Vssaa3cNMKyg8UPobiFSQ' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=290,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=290\n    ),\n  ],\n  thoughts_token_count=317,\n  total_token_count=607\n) automatic_function_calling_history=[] parsed=None",
+      "meta": {
+        "model": "gemini-2.5-flash",
+        "source": "gemini",
+        "api_key_masked": "...YdS8FQ"
+      },
+      "_repair_attempt": {
+        "attempt": "extract_from_text",
+        "repaired_text_snippet": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='3VssacGbPIuqjuMPiOG4-Q8' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=264,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=264\n    ),\n  ],\n  thoughts_token_count=199,\n  total_token_count=463\n) automatic_function_calling_history=[] parsed=None",
+        "repair_meta": {
+          "model": "gemini-2.5-flash",
+          "source": "gemini",
+          "api_key_masked": "...YdS8FQ"
+        }
+      },
+      "_repair_attempt_2": {
+        "attempt": "regenerate_from_scenario",
+        "repaired_text_snippet": "sdk_http_response=HttpResponse(\n  headers=<dict len=11>\n) candidates=[Candidate(\n  content=Content(\n    role='model'\n  ),\n  finish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\n  index=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='4lssaamYE8SN4-EP9aPm0Ag' usage_metadata=GenerateContentResponseUsageMetadata(\n  prompt_token_count=187,\n  prompt_tokens_details=[\n    ModalityTokenCount(\n      modality=<MediaModality.TEXT: 'TEXT'>,\n      token_count=187\n    ),\n  ],\n  thoughts_token_count=199,\n  total_token_count=386\n) automatic_function_calling_history=[] parsed=None",
+        "repair_meta": {
+          "model": "gemini-2.5-flash",
+          "source": "gemini",
+          "api_key_masked": "...8kHKEQ"
+        }
+      },
+      "_parse_status": "failed"
+    }
+  ],
+  "raw_merge_meta": {
+    "model": "gemini-2.5-flash",
+    "source": "gemini",
+    "api_key_masked": "...QFFZ58"
+  },
+  "created_at": "2025-11-30T15:00:16.887916+00:00"
+}

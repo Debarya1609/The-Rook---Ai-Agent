@@ -1,0 +1,16 @@
+{
+  "worker_index": 1,
+  "draft": {
+    "to": "client@example.com",
+    "subject": "sdk_http_response=HttpResponse(",
+    "body": "headers=<dict len=11>\n) candidates=[Candidate(\ncontent=Content(\nrole='model'\n),\nfinish_reason=<FinishReason.MAX_TOKENS: 'MAX_TOKENS'>,\nindex=0\n)] create_time=None model_version='gemini-2.5-flash' prompt_feedback=None response_id='11ssaZTNGLDQjuMPqfS9KQ' usage_metadata=GenerateContentResponseUsageMetadata(\nprompt_token_count=290,\nprompt_tokens_details=[\nModalityTokenCount(\nmodality=<MediaModality.TEXT: 'TEXT'>,\ntoken_count=290\n),\n],\nthoughts_token_count=317,\ntotal_token_count=607\n) automatic_function_calling_history=[] parsed=None",
+    "meta": {
+      "worker_raw_meta": {
+        "model": "gemini-2.5-flash",
+        "source": "gemini",
+        "api_key_masked": "...8kHKEQ"
+      }
+    }
+  },
+  "created_at": "2025-11-30T14:59:46.534805+00:00"
+}
