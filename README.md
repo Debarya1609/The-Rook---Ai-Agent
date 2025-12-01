@@ -86,7 +86,8 @@ This demonstrates actual agentic architecture—not just prompting.
 
 ## 4. Architecture Overview
 
-<img width="931" height="615" alt="image" src="https://github.com/user-attachments/assets/445346fd-8e45-44a9-9e31-a55a427feff9" />
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/87cb3bf6-edf3-437f-96f4-d28496ea1b02" />
+
 
 
 ---
