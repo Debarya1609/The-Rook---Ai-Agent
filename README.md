@@ -210,3 +210,9 @@ python "Rook ai.py"
 ### This system automates decision workflows for marketing teams and shows the potential of autonomous agents inside enterprise environments.
 
 ---
+
+## This project is submited to "Agents Intensive - Capstone Project" by Kaggle X Google 
+### Members:
+- Debarya Banerjee
+- Tanish Badgal
+- Salifu Alhassan
