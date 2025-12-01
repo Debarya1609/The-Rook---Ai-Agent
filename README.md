@@ -1,5 +1,14 @@
 # The Rook — Autonomous Marketing Intelligence Agent
-A multi-agent system for diagnosing marketing problems, generating action plans, drafting emails, and simulating enterprise marketing workflows.
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/5839aa64-557e-47fb-8440-8a6354c760fd" />
+
+
+
+### The Rook AI is an autonomous multi-agent system designed to act as a full-time, in-house digital marketing strategist. It analyzes marketing performance, detects problems early, generates actionable plans, drafts client-ready communication, and simulates enterprise workflows — all without human intervention.
+
+### Built with a powerful orchestration layer, parallel LLM agents, smart token budgeting, and custom tools, The Rook AI helps marketing teams work faster, communicate better, and make consistent data-backed decisions.
+
+### From diagnosing campaign issues like low budget, bad creatives, ROAS drops, or spend spikes, to drafting clean email updates and creating structured task recommendations, The Rook delivers end-to-end marketing intelligence through an agentic architecture that is reliable, observable, and production-ready.
 
 ---
 
@@ -184,6 +193,7 @@ python "Rook ai.py"
 - Build a web dashboard for agents and log viewing
 - Add long-term memory for strategy refinement
 - Deploy via Agent Engine or Cloud Run
+- Future version will be updraded with more advancements
 
 ---
 
