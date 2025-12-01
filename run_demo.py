@@ -115,7 +115,7 @@ def run_demo_from_path(file_path, use_llm=False, save_logs=False):
                 "campaign_spike": 1641,
                 "bad_creatives": 1588,
                 "content_calendar": 1765,
-                "dev_overload": 1165    
+                "dev_overload": 1165
             }
             scenario_name = Path(file_path).stem
             token_budget = per_scenario_tokens.get(scenario_name, int(os.getenv("LLM_MAX_TOKENS", 400)))

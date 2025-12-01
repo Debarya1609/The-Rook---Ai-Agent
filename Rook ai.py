@@ -66,18 +66,18 @@ if TOKEN_BUDGETS_PATH.exists():
 
 # default per-scenario map (fallback)
 per_scenario_tokens = {
-    "low_budget": 1400,
-    "sudden_drop_in_ROAS": 1200,
-    "campaign_spike": 800,
-    "bad_creatives": 700,
-    "content_calendar": 500,
-    "dev_overload": 500
+    "low_budget": 1590,
+    "sudden_drop_in_ROAS": 1950,
+    "campaign_spike": 1641,
+    "bad_creatives": 1588,
+    "content_calendar": 1765,
+    "dev_overload": 1165
 }
 
 def get_token_budget_for_scenario(scenario_name: str) -> int:
     if scenario_name in token_budgets and token_budgets[scenario_name]:
         return int(token_budgets[scenario_name])
-    return per_scenario_tokens.get(scenario_name, int(os.getenv("LLM_MAX_TOKENS", 400)))
+    return per_scenario_tokens.get(scenario_name, int(os.getenv("LLM_MAX_TOKENS", 900)))
 
 def pretty_json(obj):
     try:

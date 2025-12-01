@@ -1,5 +1,13 @@
 # rook_orchestrator/tools/email_api.py
+"""
+Email API tool for The Rook.
 
+Generates parallel email drafts using the LLM client, merges them,
+and returns a final normalized email JSON object.
+
+This version contains robust handling for raw SDK responses (e.g. GenerateContentResponse)
+by coercing them to plain text before any regex / JSON extraction.
+"""
 
 import json
 import os
@@ -8,12 +16,8 @@ import datetime
 import logging
 import re
 from typing import List, Optional, Tuple, Dict, Any
-import smtplib
-from email.mime.text import MIMEText
 
-
-from ..utils.llm_client import call_llm_structured, get_text_from_sdk_resp
-
+from ..utils.llm_client import call_llm_structured  # assumes this returns (parsed, raw)
 logger = logging.getLogger(__name__)
 
 
@@ -31,80 +35,166 @@ def _save_json(obj: dict, prefix: str, folder: str = "logs/emails") -> str:
 
 
 # ----------------------------------------------------------
+# Helper: coerce SDK/raw responses to plain text
+# ----------------------------------------------------------
+def _coerce_to_text(raw_obj: Any) -> str:
+    """
+    Convert different kinds of 'raw' responses to a readable string.
+    Handles:
+      - None
+      - plain str
+      - dicts with 'text' or 'raw' keys
+      - SDK objects like GenerateContentResponse that expose .text or can be str()'ed
+    """
+    if raw_obj is None:
+        return ""
+
+    # If it's already a string
+    if isinstance(raw_obj, str):
+        return raw_obj
+
+    # If it's bytes
+    if isinstance(raw_obj, (bytes, bytearray)):
+        try:
+            return raw_obj.decode("utf-8", errors="replace")
+        except Exception:
+            return str(raw_obj)
+
+    # If it's a dict, try to find common fields
+    if isinstance(raw_obj, dict):
+        # common places where text might live
+        for key in ("text", "output", "raw", "response", "result"):
+            if key in raw_obj and raw_obj[key] is not None:
+                return _coerce_to_text(raw_obj[key])
+        # fallback: dump limited JSON
+        try:
+            return json.dumps(raw_obj, default=str)
+        except Exception:
+            return str(raw_obj)
+
+    # If it has 'text' attribute (e.g., SDK response)
+    text_attr = getattr(raw_obj, "text", None)
+    if text_attr:
+        try:
+            return str(text_attr)
+        except Exception:
+            pass
+
+    # Some SDK objects may contain candidates/content parts
+    # Try to stringify gracefully
+    try:
+        return str(raw_obj)
+    except Exception:
+        return ""
+
+
+# ----------------------------------------------------------
 # Helper: extract JSON snippet from raw LLM text
 # ----------------------------------------------------------
-def _extract_json_snippet(text: str) -> Optional[dict]:
-    if not text:
+def _extract_json_snippet(text: Any) -> Optional[dict]:
+    """
+    Try to locate a JSON object inside `text`.
+    Uses only Python-compatible regex (no (?R)) and simple substring heuristics.
+    Returns parsed dict if found, else None.
+    """
+    if text is None:
         return None
 
-    # Look for ```json ... ```
-    m = re.search(r"```json\s*(\{.*?\})\s*```", text, flags=re.S)
+    s = _coerce_to_text(text)
+    if not s:
+        return None
+
+    # 1) Look for fenced ```json { ... } ```
+    m = re.search(r"```json\s*(\{.*?\})\s*```", s, flags=re.S)
     if m:
         try:
             return json.loads(m.group(1))
-        except:
+        except Exception:
             pass
 
-    # Look for ``` ... ```
-    m = re.search(r"```\s*(\{.*?\})\s*```", text, flags=re.S)
+    # 2) Look for fenced ``` { ... } ```
+    m = re.search(r"```\s*(\{.*?\})\s*```", s, flags=re.S)
     if m:
         try:
             return json.loads(m.group(1))
-        except:
+        except Exception:
             pass
 
-    # Naive find of first JSON object
-    start = text.find("{")
-    if start != -1:
-        for end in range(start + 50, min(start + 5000, len(text))):
-            if text[end] == "}":
-                candidate = text[start:end + 1]
-                try:
-                    return json.loads(candidate)
-                except:
-                    pass
+    # 3) Try to parse the entire string as JSON
+    try:
+        return json.loads(s)
+    except Exception:
+        pass
 
+    # 4) Naive window: from first "{" to last "}"
+    first = s.find("{")
+    last = s.rfind("}")
+    if first != -1 and last != -1 and last > first:
+        candidate = s[first:last + 1]
+        try:
+            return json.loads(candidate)
+        except Exception:
+            pass
+
+    # Give up
     return None
 
 
 # ----------------------------------------------------------
 # Helper: normalize parsed email
 # ----------------------------------------------------------
-def _normalize_parsed(p: dict, raw: dict, subject_hint: str) -> dict:
+def _normalize_parsed(p: Dict[str, Any], raw: Any, subject_hint: str) -> dict:
+    """
+    p: parsed dict returned by call_llm_structured (may be {})
+    raw: raw SDK response (various types)
+    subject_hint: fallback subject
+    """
     result = {
-        "to": p.get("to") or "client@example.com",
-        "subject": p.get("subject") or subject_hint or "Update",
-        "body": p.get("body") or "",
-        "meta": p.get("meta") or {},
+        "to": None,
+        "subject": None,
+        "body": None,
+        "meta": {}
     }
 
-    # If body and subject missing → try raw JSON extraction
-    raw_text = ""
-    try:
-        if isinstance(raw, dict):
-            raw_text = raw.get("raw") or raw.get("text") or ""
-        else:
-            raw_text = str(raw)
-    except:
-        raw_text = str(raw)
+    # Fill from parsed structure first (if any)
+    if isinstance(p, dict):
+        result["to"] = p.get("to") or p.get("recipient") or p.get("email_to")
+        result["subject"] = p.get("subject")
+        # body may be in 'body' or 'text' or 'content'
+        result["body"] = p.get("body") or p.get("text") or p.get("content")
 
-    if not result["body"] or not result["subject"]:
+        # copy meta if present
+        if "meta" in p and isinstance(p["meta"], dict):
+            result["meta"].update(p["meta"])
+
+    # Coerce raw to text for attempts at extraction
+    raw_text = _coerce_to_text(raw)
+
+    # If any field missing, try to extract JSON snippet from raw text
+    if not result["to"] or not result["subject"] or not result["body"]:
         parsed_raw = _extract_json_snippet(raw_text)
         if parsed_raw:
-            result["to"] = parsed_raw.get("to", result["to"])
-            result["subject"] = parsed_raw.get("subject", result["subject"])
-            result["body"] = parsed_raw.get("body", result["body"])
+            result["to"] = result["to"] or parsed_raw.get("to") or parsed_raw.get("recipient")
+            result["subject"] = result["subject"] or parsed_raw.get("subject")
+            result["body"] = result["body"] or parsed_raw.get("body") or parsed_raw.get("text")
             result["meta"]["from_raw_json"] = True
-            return result
 
-        # Fallback: extract first lines
-        lines = [l.strip() for l in raw_text.splitlines() if l.strip()]
-        if not result["subject"] and lines:
-            result["subject"] = lines[0][:80]
-        if not result["body"] and len(lines) > 1:
-            result["body"] = "\n".join(lines[1:])[:1200]
-        elif not result["body"]:
-            result["body"] = raw_text[:1200]
+    # Final fallbacks
+    if not result["to"]:
+        result["to"] = "client@example.com"
+
+    if not result["subject"]:
+        # pick first non-empty line from raw_text or subject hint
+        lines = [ln.strip() for ln in raw_text.splitlines() if ln.strip()]
+        result["subject"] = subject_hint or (lines[0][:80] if lines else "Update")
+
+    if not result["body"]:
+        # use the remainder of raw_text (trim length)
+        lines = [ln for ln in raw_text.splitlines() if ln.strip()]
+        if len(lines) > 1:
+            result["body"] = "\n".join(lines[1:])[:2000]
+        else:
+            result["body"] = raw_text[:2000]
 
     return result
 
@@ -117,9 +207,7 @@ class EmailAPI:
     def __init__(self):
         pass
 
-    # ------------------------------------------------------
-    # Generate parallel drafts
-    # ------------------------------------------------------
+    # Worker prompt
     def _worker_prompt(self, subject: str, notes: str) -> Tuple[str, str]:
         system = (
             "You are an email-writing assistant. ALWAYS output EXACT JSON ONLY.\n"
@@ -135,9 +223,7 @@ class EmailAPI:
 
         return system, user_prompt
 
-    # ------------------------------------------------------
-    # Merge drafts
-    # ------------------------------------------------------
+    # Merge prompt
     def _merge_prompt(self, drafts: List[dict], subject_hint: str) -> Tuple[str, str]:
         sys = (
             "You are an email merger. You will receive multiple JSON emails.\n"
@@ -153,9 +239,7 @@ class EmailAPI:
 
         return sys, text
 
-    # ------------------------------------------------------
-    # Email generation (parallel)
-    # ------------------------------------------------------
+    # Generate email interactive
     def generate_email_interactive(
             self,
             subject_hint: str,
@@ -168,14 +252,14 @@ class EmailAPI:
         logger.info(f"Generating {workers} parallel drafts...")
 
         # 1) Generate worker drafts
-        raw_worker_calls = []
-        parsed_workers = []
+        raw_worker_calls: List[Any] = []
+        parsed_workers: List[Dict[str, Any]] = []
 
         for i in range(workers):
-            sys, prompt = self._worker_prompt(subject_hint, notes)
+            sys_inst, prompt = self._worker_prompt(subject_hint, notes)
             parsed, raw = call_llm_structured(
                 scenario_text=prompt,
-                system_instruction=sys,
+                system_instruction=sys_inst,
                 max_output_tokens=worker_tokens,
                 temperature=0.3,
                 repair_max_tokens=150
@@ -184,9 +268,18 @@ class EmailAPI:
             raw_worker_calls.append(raw or {})
 
         # Normalize workers
-        clean_workers = []
+        clean_workers: List[dict] = []
         for p, r in zip(parsed_workers, raw_worker_calls):
-            clean_workers.append(_normalize_parsed(p, r, subject_hint))
+            try:
+                clean_workers.append(_normalize_parsed(p, r, subject_hint))
+            except Exception as e:
+                logger.warning("Normalization failed for worker, falling back to raw text: %s", e)
+                clean_workers.append({
+                    "to": "client@example.com",
+                    "subject": subject_hint,
+                    "body": _coerce_to_text(r)[:1200],
+                    "meta": {"normalization_error": str(e)}
+                })
 
         # 2) MERGE
         sys_merge, prompt_merge = self._merge_prompt(clean_workers, subject_hint)
@@ -198,15 +291,15 @@ class EmailAPI:
             repair_max_tokens=150
         )
 
-        # Normalize
         final = _normalize_parsed(parsed_merge or {}, raw_merge or {}, subject_hint)
 
-        # 3) REPAIR if broken
+        # 3) REPAIR if corrupted
         bad_words = ["sdk_http_response", "Candidate(", "MAX_TOKENS", "GenerateContentResponse"]
-        if any(b in (final.get("body", "") + final.get("subject", "")) for b in bad_words):
+        combined_check = (final.get("body", "") + final.get("subject", ""))
+        if any(b in combined_check for b in bad_words):
             logger.info("Final looks corrupted → running repair LLM...")
 
-            raw_text = json.dumps({"workers": raw_worker_calls}, indent=2)
+            raw_text = json.dumps({"workers": [_coerce_to_text(r) for r in raw_worker_calls]}, indent=2)
 
             sys_repair = (
                 "You will be given messy text. Extract and output EXACTLY one JSON:\n"
@@ -231,8 +324,8 @@ class EmailAPI:
         log_record = {
             "final": final,
             "workers": clean_workers,
-            "raw_workers": raw_worker_calls,
-            "raw_merge_meta": raw_merge.get("meta") if isinstance(raw_merge, dict) else {},
+            "raw_workers": [_coerce_to_text(r) for r in raw_worker_calls],
+            "raw_merge_meta": (raw_merge.meta if hasattr(raw_merge, "meta") else {}),
             "created_at": datetime.datetime.utcnow().isoformat()
         }
 
@@ -240,49 +333,3 @@ class EmailAPI:
         final["meta"]["log_path"] = path
 
         return final
-
-
-
-class EmailClient:
-    def __init__(self, smtp_host: str, smtp_port: int, username: str, password: str, use_tls: bool = True):
-        self.smtp_host = smtp_host #smtp.gmail.com -  we can read these from the .env
-        self.smtp_port = smtp_port #587  we can read these from the .env
-        self.username = username  #we can read these from the .env
-        self.password = password # we can read these from the .env
-        self.use_tls = use_tls
-
-    def send(self, to: str, subject: str, body: str) -> Dict[str, Any]:
-        """
-        Sends an email and returns a result dictionary.
-        """
-        msg = MIMEText(body, "plain", "utf-8")
-        msg["From"] = self.username
-        msg["To"] = to
-        msg["Subject"] = subject
-
-        try:
-            server = smtplib.SMTP(self.smtp_host, self.smtp_port, timeout=10)
-
-            if self.use_tls:
-                server.starttls()
-
-            server.login(self.username, self.password)
-            server.sendmail(self.username, [to], msg.as_string())
-            server.quit()
-
-            return {
-                "success": True,
-                "message": "Email sent successfully",
-                "to": to,
-                "subject": subject
-            }
-
-        except Exception as e:
-            return {
-                "success": False,
-                "error": str(e),
-                "to": to,
-                "subject": subject
-            }
-
-
